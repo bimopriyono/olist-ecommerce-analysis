@@ -1,9 +1,5 @@
 from pathlib import Path
-<<<<<<< HEAD
 import html
-
-=======
->>>>>>> e8758c7d9bf0a819353c326c00a5221d26931ab6
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -747,8 +743,6 @@ def page_header(title, subtitle):
         unsafe_allow_html=True
     )
 
-
-<<<<<<< HEAD
 def kpi_card(icon, label, value, description, icon_class):
     st.markdown(
         f"""
@@ -778,12 +772,7 @@ def chart_heading(icon, title):
         unsafe_allow_html=True
     )
 
-
-def style_chart(fig, height=390):
-=======
-
 def style_chart(fig, height=400):
->>>>>>> e8758c7d9bf0a819353c326c00a5221d26931ab6
     fig.update_layout(
         template="plotly_white",
         paper_bgcolor="rgba(255,255,255,0)",
