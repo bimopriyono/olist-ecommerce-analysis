@@ -71,18 +71,21 @@ except FileNotFoundError:
 # 3. CUSTOM CSS
 # =========================================================
 
+
 st.markdown("""
 <style>
 
-/* ================= BACKGROUND ================= */
+/* =====================================================
+   1. BACKGROUND UTAMA
+===================================================== */
 
 .stApp {
-    background-color: #F4F6FB;
+    background-color: #E8EDF7;
     color: #1E293B;
 }
 
 [data-testid="stAppViewContainer"] {
-    background-color: #F4F6FB;
+    background-color: #E8EDF7;
 }
 
 [data-testid="stHeader"] {
@@ -95,51 +98,117 @@ st.markdown("""
     padding-bottom: 3rem;
 }
 
-/* ================= SIDEBAR ================= */
+
+/* =====================================================
+   2. SIDEBAR NAVY
+===================================================== */
 
 section[data-testid="stSidebar"] {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E2E8F0;
+    background-color: #17243F;
+    border-right: 1px solid #263653;
 }
 
 section[data-testid="stSidebar"] > div {
     padding-top: 2rem;
 }
 
+/* Semua teks sidebar */
+section[data-testid="stSidebar"] * {
+    color: #E8EEF9;
+}
+
+/* Judul sidebar */
 section[data-testid="stSidebar"] h1 {
-    color: #312E81 !important;
+    color: #FFFFFF !important;
     font-size: 1.55rem;
     font-weight: 800;
 }
 
+/* Subjudul sidebar */
 section[data-testid="stSidebar"] p {
-    color: #64748B;
+    color: #B8C5DC !important;
 }
 
+/* Judul bagian navigasi dan filter */
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #FFFFFF !important;
+}
+
+/* Label navigasi */
 section[data-testid="stSidebar"] label {
-    color: #334155 !important;
+    color: #E8EEF9 !important;
     font-weight: 600;
 }
 
-/* Navigasi */
+/* Jarak antar pilihan navigasi */
 section[data-testid="stSidebar"] div[role="radiogroup"] {
     gap: 8px;
 }
 
+/* Tampilan pilihan navigasi */
 section[data-testid="stSidebar"] div[role="radiogroup"] label {
-    background-color: #F8FAFC;
-    border-radius: 9px;
+    background-color: #202F4D;
+    border: 1px solid #344563;
+    border-radius: 10px;
     padding: 10px 12px;
-    border: 1px solid #E2E8F0;
-    transition: 0.2s ease;
+    transition: all 0.2s ease;
 }
 
+/* Efek hover navigasi */
 section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
-    background-color: #EEF2FF;
-    border-color: #C7D2FE;
+    background-color: #344477;
+    border-color: #7774E8;
 }
 
-/* ================= TEXT ================= */
+/* Warna teks navigasi */
+section[data-testid="stSidebar"] div[role="radiogroup"] label p {
+    color: #E8EEF9 !important;
+}
+
+/* Garis sidebar */
+section[data-testid="stSidebar"] hr {
+    border-color: #3B4A65;
+}
+
+/* Caption sidebar */
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    color: #AAB9D1 !important;
+}
+
+
+/* =====================================================
+   3. FILTER SIDEBAR
+===================================================== */
+
+/* Kotak tanggal */
+section[data-testid="stSidebar"] input {
+    background-color: #263653 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #526482 !important;
+    border-radius: 8px !important;
+}
+
+/* Kotak multiselect */
+section[data-testid="stSidebar"] [data-baseweb="select"] > div {
+    background-color: #263653 !important;
+    border-color: #526482 !important;
+}
+
+/* Teks pilihan multiselect */
+section[data-testid="stSidebar"] [data-baseweb="select"] span {
+    color: #FFFFFF !important;
+}
+
+/* Ikon filter */
+section[data-testid="stSidebar"] svg {
+    color: #DCE5F5;
+}
+
+
+/* =====================================================
+   4. TEKS UTAMA
+===================================================== */
 
 h1, h2, h3 {
     color: #172554 !important;
@@ -147,127 +216,148 @@ h1, h2, h3 {
 }
 
 p {
-    color: #475569;
+    color: #334155;
 }
 
 [data-testid="stCaptionContainer"] {
     color: #64748B;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   5. HEADER HALAMAN
+===================================================== */
 
 .main-header {
-    background: linear-gradient(120deg, #312E81, #5145CD);
-    padding: 28px 32px;
-    border-radius: 16px;
+    background: linear-gradient(
+        120deg,
+        #E1E7FF 0%,
+        #EEF1FF 55%,
+        #E6ECFA 100%
+    );
+    border: 1px solid #D4DDF3;
+    padding: 30px 34px;
+    border-radius: 17px;
     margin-bottom: 25px;
-    box-shadow: 0 5px 18px rgba(49, 46, 129, 0.12);
+    box-shadow: 0 4px 14px rgba(30, 41, 59, 0.06);
+    position: relative;
+    overflow: hidden;
 }
 
 .main-header h1 {
-    color: #FFFFFF !important;
+    color: #172554 !important;
     font-size: 2rem;
-    margin: 0;
     font-weight: 800;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .main-header p {
-    color: #E0E7FF !important;
-    margin-top: 9px;
+    color: #475B80 !important;
+    margin-top: 10px;
     margin-bottom: 0;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
 }
 
-/* ================= KPI CARDS ================= */
+
+/* =====================================================
+   6. KARTU KPI
+===================================================== */
 
 [data-testid="stMetric"] {
     background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #DCE3EF;
     border-radius: 14px;
-    padding: 20px 18px;
+    padding: 21px 19px;
     min-height: 125px;
-    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
-    transition: 0.2s ease;
+    box-shadow: 0 3px 10px rgba(23, 37, 84, 0.05);
+    transition: all 0.2s ease;
 }
 
+/* Hover kartu */
 [data-testid="stMetric"]:hover {
     border-color: #A5B4FC;
-    box-shadow: 0 5px 15px rgba(49, 46, 129, 0.08);
+    box-shadow: 0 5px 15px rgba(49, 46, 129, 0.10);
 }
 
+/* Label KPI */
 [data-testid="stMetricLabel"] {
-    color: #64748B !important;
-    font-size: 0.88rem;
+    color: #53627D !important;
+    font-size: 0.9rem;
     font-weight: 650;
 }
 
 [data-testid="stMetricLabel"] p {
-    color: #64748B !important;
+    color: #53627D !important;
 }
 
+/* Angka KPI */
 [data-testid="stMetricValue"] {
-    color: #312E81 !important;
+    color: #172554 !important;
     font-size: 1.65rem;
     font-weight: 800;
 }
 
+/* Delta KPI */
 [data-testid="stMetricDelta"] {
     color: #475569 !important;
 }
 
-/* ================= CHARTS ================= */
+
+/* =====================================================
+   7. GRAFIK
+===================================================== */
 
 [data-testid="stPlotlyChart"] {
     background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 13px;
+    border: 1px solid #DCE3EF;
+    border-radius: 14px;
     padding: 10px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 3px 10px rgba(23, 37, 84, 0.04);
 }
 
-/* ================= TABLES ================= */
+
+/* =====================================================
+   8. TABEL
+===================================================== */
 
 [data-testid="stDataFrame"] {
     background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #DCE3EF;
     border-radius: 12px;
     overflow: hidden;
 }
 
-/* ================= INPUTS ================= */
 
-.stDateInput input {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-}
-
-.stMultiSelect div[data-baseweb="select"] {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-}
-
-/* ================= BUTTONS ================= */
+/* =====================================================
+   9. TOMBOL DAN ALERT
+===================================================== */
 
 .stButton button {
     border-radius: 9px;
     font-weight: 600;
 }
 
-/* ================= DIVIDER ================= */
-
-hr {
-    border-color: #E2E8F0;
-}
-
-/* ================= ALERT ================= */
-
 [data-testid="stAlert"] {
     border-radius: 10px;
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =====================================================
+   10. GARIS PEMISAH
+===================================================== */
+
+hr {
+    border-color: #D5DDEC;
+}
+
+
+/* =====================================================
+   11. RESPONSIVE
+===================================================== */
 
 @media (max-width: 768px) {
+
     .block-container {
         padding-top: 1rem;
         padding-left: 1rem;
@@ -290,10 +380,12 @@ hr {
     [data-testid="stMetricValue"] {
         font-size: 1.3rem;
     }
+
 }
 
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # =========================================================
@@ -302,6 +394,7 @@ hr {
 
 def format_brl(value):
     return f"R$ {value:,.2f}"
+
 
 
 def page_header(title, subtitle):
@@ -314,6 +407,7 @@ def page_header(title, subtitle):
         """,
         unsafe_allow_html=True
     )
+
 
 
 def style_chart(fig, height=400):
